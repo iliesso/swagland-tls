@@ -1,0 +1,19 @@
+Fonction PNJDialogue().
+
+Lancement de la fonction quand un joueur interagit avec un PNJ. (touche interagir(E) ou clic droit).
+
+
+//Affichage de la barre de dialogue
+La fonction démarre le dialogue entre le joueur et le PNJ. Il est représenté par une barre noire sur toute la longueur inférieure de l'écran,
+(ou supérieure si la position verticale (y) du joueur est inférieure à un tiers de la hauteur de la caméra (default=216), pour la visibilité).
+La barre noire fait environ 25% de la hauteur de l'écran. Le personnage en train de parler est associé à une couleur qui lui correspond,
+son nom est écrit au début de chacun de ses dialogues avec sa couleur.
+
+
+//Affichage des personnages lors du dialogue
+Le sprite du personnage en train de parler "slide" horizontalement de hors de l'écran jusqu'à dans l'écran, à la manière de SlideTransition.
+Il est tourné légèrement d'un certain angle. Quand c'est au tour de quelqu'un d'autre de parler, il se retire comme il est arrivé.
+
+
+//Mise en place du système de dialogue
+Les dialogues sont stockés 
