@@ -31,7 +31,7 @@ directio= key_right - key_left;
 hsp = directio * walkspd;
 
 
-if place_meeting(x,y+1,oWall)
+if place_meeting(x,y+1,oWall) //If player standing on the ground
 {
 	vsp = key_up * -jumpspd;
 }
