@@ -1,9 +1,11 @@
 //move
 hsp = 0;
 vsp = 0;
-grv = 0.1;
+grv = 0.13;
+fallspeed = 5;
 walkspd = 3;
 hascontrol = true;
+
 
 //jump state
 jumpspd_normal = 3.7;

@@ -43,7 +43,7 @@ if place_meeting(x,y+1,oWall)
 	key_up = 0;
 }
 
-if (vsp < 10) {
+if (vsp < fallspeed) {
 	vsp += grv;	
 }
 
