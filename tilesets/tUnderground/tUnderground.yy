@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tUnderground",
   "spriteId": {
     "name": "sTilesUnderground",
     "path": "sprites/sTilesUnderground/sTilesUnderground.yy",
@@ -19,7 +22,7 @@
   "out_columns": 7,
   "tile_count": 48,
   "autoTileSets": [
-    {"tiles":[
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_1","tiles":[
         47,
         47,
         47,
@@ -67,7 +70,7 @@
         47,
         47,
         47,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_1","tags":[],"resourceType":"GMAutoTileSet",},
+      ],"closed_edge":false,},
   ],
   "tileAnimationFrames": [],
   "tileAnimationSpeed": 15.0,
@@ -125,29 +128,11 @@
     "SerialiseFrameCount": 1,
   },
   "macroPageTiles": {
+    "TileDataFormat": 1,
     "SerialiseWidth": 7,
     "SerialiseHeight": 3,
-    "TileSerialiseData": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+    "TileCompressedData": [
+      -21,
       0,
     ],
   },
@@ -155,8 +140,4 @@
     "name": "Tile Sets",
     "path": "folders/Tile Sets.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tUnderground",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

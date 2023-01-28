@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tHerbe",
   "spriteId": {
     "name": "sTilesHerbe",
     "path": "sprites/sTilesHerbe/sTilesHerbe.yy",
@@ -19,7 +22,7 @@
   "out_columns": 7,
   "tile_count": 48,
   "autoTileSets": [
-    {"tiles":[
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_1","tiles":[
         47,
         1,
         2,
@@ -67,7 +70,7 @@
         44,
         45,
         46,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_1","tags":[],"resourceType":"GMAutoTileSet",},
+      ],"closed_edge":false,},
   ],
   "tileAnimationFrames": [],
   "tileAnimationSpeed": 15.0,
@@ -133,8 +136,4 @@
     "name": "Tile Sets",
     "path": "folders/Tile Sets.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "tHerbe",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

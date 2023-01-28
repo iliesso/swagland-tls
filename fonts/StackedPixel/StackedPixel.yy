@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMFont",
+  "resourceVersion": "1.0",
+  "name": "StackedPixel",
   "hinting": 0,
   "glyphOperations": 0,
   "interpreter": 0,
@@ -21,6 +24,7 @@
     "path": "texturegroups/Default",
   },
   "ascenderOffset": 0,
+  "ascender": 0,
   "glyphs": {
     "32": {"x":2,"y":2,"w":4,"h":21,"character":32,"shift":4,"offset":0,},
     "33": {"x":200,"y":48,"w":4,"h":21,"character":33,"shift":5,"offset":1,},
@@ -549,8 +553,4 @@
     "name": "Menu",
     "path": "folders/Menu.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "StackedPixel",
-  "tags": [],
-  "resourceType": "GMFont",
 }

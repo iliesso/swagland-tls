@@ -1,7 +1,7 @@
 {
   "resourceType": "GMProject",
   "resourceVersion": "1.6",
-  "name": "swaglandtest",
+  "name": "swagland-tls",
   "resources": [
     {"id":{"name":"sTilesHouse1","path":"sprites/sTilesHouse1/sTilesHouse1.yy",},"order":2,},
     {"id":{"name":"sLogoSwagland","path":"sprites/sLogoSwagland/sLogoSwagland.yy",},"order":3,},

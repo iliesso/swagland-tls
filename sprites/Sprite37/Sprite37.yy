@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "swaglandtest",
-    "path": "swaglandtest.yyp",
+    "name": "swagland-tls",
+    "path": "swagland-tls.yyp",
   },
 }
