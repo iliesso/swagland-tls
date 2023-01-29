@@ -6,13 +6,17 @@ fallspeed = 5;   //default 5
 walkspd = 2.3;   //default 2.3
 sprintspd = 1;	 //default 1
 hascontrol = true;
+on_ground = false;
 
 
 //jump state
 jumpspd_normal = 3.5;
 jumpspd_boost = 5.8;
 jumpspd = jumpspd_normal;
+jumped = false;
 canjump = 0;
+buffer_counter = 0;
+buffer_max = 5;
 
 //player state
 damageCountdown = false;	   //after every damage taken, little cooldown (few seconds)

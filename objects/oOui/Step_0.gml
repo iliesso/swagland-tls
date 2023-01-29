@@ -27,37 +27,94 @@ if (hascontrol = true)
 	}
 
 
-//input and movement link
-directio= key_right - key_left;
-if (vsp < -3 || vsp > 3){
-	hsp = directio * (walkspd);  //can't sprint in the air
-} else {
-	hsp = directio * (walkspd + (key_sprint*key_sprint)); //Walks towards left or right depending if "directio" == 1 or -1. If player sprinting, add sprint speed.
-}
-
-
-	canjump -= 1;  //Jump buffer
-	if (canjump > 0 && (key_up != 0)) //If player standing on the ground & jumping
-	{ 
-		vsp = -jumpspd;   //Jump
-		canjump = 0;   //Can not jump anymore, has to touch ground again.
+	//input and movement link
+	directio= key_right - key_left;
+	if (vsp < -3 || vsp > 3){        //if going up or down in the air (faster than 3)
+		hsp = directio * (walkspd);  //can't sprint in the air
+	} else {
+		hsp = directio * (walkspd + (key_sprint*key_sprint)); //Walks towards left or right depending if "directio" == 1 or -1. If player sprinting, add sprint speed.
 	}
+
+	//Jump ledge grace time
+	if (!on_ground){
+		if (canjump > 0){
+			
+			canjump -= 1;
+			
+			if (jumped == false){
+				
+				if (key_up){
+					
+					vsp = -jumpspd;   //Jump
+					jumped = true;
+					
+				}
+			}
+		}
+	} else{
+		jumped = false;
+		canjump = buffer_max;
+	}
+	
+	//Jump buffer grace time
+	if (key_up){ buffer_counter = buffer_max; }
+	
+	if (buffer_counter > 0){
+		
+		buffer_counter -= 1;
+		
+		if (on_ground){
+			
+			vsp = -jumpspd;
+			buffer_counter = 0;
+			jumped = true;
+			
+		}
+	}
+	
 	if (vsp < 0 && (!key_up)){
 		vsp += grv;	   //if player stops pressing "jump", stop going higher.
 	}
+	
+	
+	/* 
+	canjump -= 1; 
+	if (canjump > 0 && (key_up != 0)) //If player standing on the ground & jumping
+	{ 
+		
+		buffer_counter = buffer_max; //set jump buffer when jumping
+		canjump = 0;   //Can not jump anymore, has to touch ground again.
+		
+	}
+	
+	if (vsp < 0 && (!key_up)){
+		vsp += grv;	   //if player stops pressing "jump", stop going higher.
+	}*/
+}
 
-} else  //if hascontrol == false
+//if hascontrol == false
+else  
 {
 	key_right = 0;
 	key_left = 0;
 	key_up = 0;
 }
 
+
+
 if (vsp < fallspeed) {
 	vsp += grv;	
 }
 
 #region //collision
+
+//If player in the air or on ground checking
+if (place_meeting(x,y+1,oWall)){
+	on_ground = true;
+} else {
+	on_ground = false;
+}
+
 
 //horizontal collision
 
@@ -75,7 +132,7 @@ x+= hsp;
 
 if (place_meeting(x, y+vsp, oWall))
 {
-	while (!place_meeting(x, y+sign(vsp), oWall))
+	while (!place_meeting(x, y+sign(vsp), oWall))  //If player close to touching the ground, pull him exactly on the ground.
 	{
 			y += sign(vsp);
 	}
@@ -88,7 +145,7 @@ y+= vsp;
 
 #region //sprite animation
 
-if (!place_meeting(x,y+1,oWall))    //if in the air
+if (!on_ground)    //if in the air
 {
 	sprite_index = 	sOuiFall;
 	image_speed = 0;      //not animating: only use wanted frame
@@ -101,8 +158,7 @@ if (!place_meeting(x,y+1,oWall))    //if in the air
 	
 } 
 else
-{
-	canjump = 5;
+{	
 	image_speed = 1;
 	if (hsp == 0)             //if standing
 	{

@@ -103,6 +103,7 @@
     {"id":{"name":"tStairs1","path":"tilesets/tStairs1/tStairs1.yy",},"order":3,},
     {"id":{"name":"sOui","path":"sprites/sOui/sOui.yy",},"order":0,},
     {"id":{"name":"oBulletSpark","path":"objects/oBulletSpark/oBulletSpark.yy",},"order":6,},
+    {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},"order":8,},
     {"id":{"name":"rOptions","path":"rooms/rOptions/rOptions.yy",},"order":2,},
     {"id":{"name":"StackedPixel","path":"fonts/StackedPixel/StackedPixel.yy",},"order":2,},
     {"id":{"name":"sGun","path":"sprites/sGun/sGun.yy",},"order":3,},
