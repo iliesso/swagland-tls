@@ -3,10 +3,10 @@
 if (hascontrol = true)
 {
 	
-	key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-	key_left = keyboard_check(vk_left) || keyboard_check(ord("Q"));
-	key_up = keyboard_check(vk_space);
-	
+	key_right = keyboard_check(vk_right) || keyboard_check(global.keyRight); //keyboard_check(ord("D")) default
+	key_left = keyboard_check(vk_left) || keyboard_check(global.keyLeft); //keyboard_check(ord("Q")) default
+	key_up = keyboard_check(global.keyJump);
+	key_sprint = keyboard_check(global.keySprint);
 
 	if (key_left) || (key_right) || (key_up) 
 	{
@@ -29,17 +29,21 @@ if (hascontrol = true)
 
 //input and movement link
 directio= key_right - key_left;
-hsp = directio * walkspd;
+if (vsp < -3 || vsp > 3){
+	hsp = directio * (walkspd);  //can't sprint in the air
+} else {
+	hsp = directio * (walkspd + (key_sprint*key_sprint)); //Walks towards left or right depending if "directio" == 1 or -1. If player sprinting, add sprint speed.
+}
 
-	canjump -= 1;
+
+	canjump -= 1;  //Jump buffer
 	if (canjump > 0 && (key_up != 0)) //If player standing on the ground & jumping
-	{
-		vsp = 0;
-		vsp -= jumpspd;
-		canjump = 0;
+	{ 
+		vsp = -jumpspd;   //Jump
+		canjump = 0;   //Can not jump anymore, has to touch ground again.
 	}
 	if (vsp < 0 && (!key_up)){
-		vsp += grv;	
+		vsp += grv;	   //if player stops pressing "jump", stop going higher.
 	}
 
 } else  //if hascontrol == false

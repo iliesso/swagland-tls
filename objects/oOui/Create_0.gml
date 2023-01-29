@@ -1,9 +1,10 @@
 //move
 hsp = 0;
 vsp = 0;
-grv = 0.12;
-fallspeed = 5;
-walkspd = 3;
+grv = 0.12;		 //default 0.12
+fallspeed = 5;   //default 5
+walkspd = 2.3;   //default 2.3
+sprintspd = 1;	 //default 1
 hascontrol = true;
 
 
