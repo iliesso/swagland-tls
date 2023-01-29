@@ -24,7 +24,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6EE0F9F6","properties":[],"isDnd":false,"objectId":{"name":"oTransition","path":"objects/oTransition/oTransition.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":458.0,"y":662.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_33DEB8BC","properties":[],"isDnd":false,"objectId":{"name":"oMenu","path":"objects/oMenu/oMenu.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":544.0,"y":672.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3FECCCFB","properties":[],"isDnd":false,"objectId":{"name":"oDebug","path":"objects/oDebug/oDebug.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":608.0,"y":672.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_217DD4DC","properties":[],"isDnd":false,"objectId":{"name":"oController","path":"objects/oController/oController.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":416.0,"y":672.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_217DD4DC","properties":[],"isDnd":false,"objectId":{"name":"oController","path":"objects/oController/oController.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,},
       ],"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"images","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_74989C83","spriteId":{"name":"sLogoSwagland","path":"sprites/sLogoSwagland/sLogoSwagland.yy",},"headPosition":0.0,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"animationSpeed":1.0,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":64.0,"y":96.0,},
@@ -35,10 +35,10 @@
   "creationCodeFile": "${project_dir}/rooms/rMenu/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
+    {"name":"inst_217DD4DC","path":"rooms/rMenu/rMenu.yy",},
     {"name":"inst_6EE0F9F6","path":"rooms/rMenu/rMenu.yy",},
     {"name":"inst_33DEB8BC","path":"rooms/rMenu/rMenu.yy",},
     {"name":"inst_3FECCCFB","path":"rooms/rMenu/rMenu.yy",},
-    {"name":"inst_217DD4DC","path":"rooms/rMenu/rMenu.yy",},
     {"name":"inst_5D4341F4","path":"rooms/rMenu/rMenu.yy",},
   ],
   "inheritCreationOrder": false,

@@ -1,16 +1,17 @@
 //move
 hsp = 0;
 vsp = 0;
-grv = 0.13;
+grv = 0.12;
 fallspeed = 5;
 walkspd = 3;
 hascontrol = true;
 
 
 //jump state
-jumpspd_normal = 3.7;
+jumpspd_normal = 3.5;
 jumpspd_boost = 5.8;
 jumpspd = jumpspd_normal;
+canjump = 0;
 
 //player state
 damageCountdown = false;	   //after every damage taken, little cooldown (few seconds)

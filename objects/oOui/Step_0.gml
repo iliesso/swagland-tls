@@ -3,40 +3,45 @@
 if (hascontrol = true)
 {
 	
-key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-key_left = keyboard_check(vk_left) || keyboard_check(ord("Q"));
-key_up = keyboard_check(vk_space);
+	key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+	key_left = keyboard_check(vk_left) || keyboard_check(ord("Q"));
+	key_up = keyboard_check(vk_space);
+	
 
-if (key_left) || (key_right) || (key_up) 
-{
-	controller = 0;	
-}
+	if (key_left) || (key_right) || (key_up) 
+	{
+		controller = 0;	
+	}
 
-if (abs(gamepad_axis_value(0,gp_axislh)) > 0.2)
-{
-	key_left = abs(min(gamepad_axis_value(0,gp_axislh),0));
-	key_right = max(gamepad_axis_value(0,gp_axislh),0);
-	controller = 1;
-}
+	if (abs(gamepad_axis_value(0,gp_axislh)) > 0.2)
+	{
+		key_left = abs(min(gamepad_axis_value(0,gp_axislh),0));
+		key_right = max(gamepad_axis_value(0,gp_axislh),0);
+		controller = 1;
+	}
 
-if (gamepad_button_check_pressed(0,gp_face1))
-{
-	key_up = 1;
-	controller = 1;
-}
+	if (gamepad_button_check_pressed(0,gp_face1))
+	{
+		key_up = 1;
+		controller = 1;
+	}
 
 
 //input and movement link
 directio= key_right - key_left;
 hsp = directio * walkspd;
 
+	canjump -= 1;
+	if (canjump > 0 && (key_up != 0)) //If player standing on the ground & jumping
+	{
+		vsp -= jumpspd;
+		canjump = 0;
+	}
+	if (vsp < 0 && (!key_up)){
+		vsp += grv;	
+	}
 
-if place_meeting(x,y+1,oWall) //If player standing on the ground
-{
-	vsp = key_up * -jumpspd;
-}
-
-} else
+} else  //if hascontrol == false
 {
 	key_right = 0;
 	key_left = 0;
@@ -46,6 +51,8 @@ if place_meeting(x,y+1,oWall) //If player standing on the ground
 if (vsp < fallspeed) {
 	vsp += grv;	
 }
+
+#region //collision
 
 //horizontal collision
 
@@ -61,7 +68,7 @@ x+= hsp;
 
 //vertical collision
 
-if place_meeting(x, y+vsp, oWall)
+if (place_meeting(x, y+vsp, oWall))
 {
 	while (!place_meeting(x, y+sign(vsp), oWall))
 	{
@@ -71,7 +78,11 @@ if place_meeting(x, y+vsp, oWall)
 }
 y+= vsp;
 
-//sprite animation
+#endregion
+
+
+#region //sprite animation
+
 if (!place_meeting(x,y+1,oWall))    //if in the air
 {
 	sprite_index = 	sOuiFall;
@@ -86,6 +97,7 @@ if (!place_meeting(x,y+1,oWall))    //if in the air
 } 
 else
 {
+	canjump = 5;
 	image_speed = 1;
 	if (hsp == 0)             //if standing
 	{
@@ -98,3 +110,5 @@ else
 }
 
 if (hsp != 0) image_xscale = sign(hsp);   //flip sprite horizontally according to facing side
+
+#endregion

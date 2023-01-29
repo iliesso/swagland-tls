@@ -5,19 +5,27 @@
 //**GLOBAL**
 //**********
 
-//Game variables
+#region //Game variables
 global.gamePaused = false;
 global.textSpeed = 0.75;
+global.fullscreen = false;
 
-//Player variables
+#endregion
+
+
+#region //Player variables
 global.target = -1;
 global.targetX = -1;
 global.targetY = -1;
 
-//Camera variables
+#endregion
+
+
+#region //Camera variables
 //No need to define camHeight as it will always be camWidth*0.75.
 global.camWidth = 288;
 
+#endregion
 
 
 //********
