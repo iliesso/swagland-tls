@@ -34,6 +34,7 @@ hsp = directio * walkspd;
 	canjump -= 1;
 	if (canjump > 0 && (key_up != 0)) //If player standing on the ground & jumping
 	{
+		vsp = 0;
 		vsp -= jumpspd;
 		canjump = 0;
 	}
