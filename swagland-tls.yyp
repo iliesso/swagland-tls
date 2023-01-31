@@ -98,6 +98,7 @@
     {"id":{"name":"oTextboxGun","path":"objects/oTextboxGun/oTextboxGun.yy",},"order":19,},
     {"id":{"name":"sBMaisonspawn","path":"sprites/sBMaisonspawn/sBMaisonspawn.yy",},"order":0,},
     {"id":{"name":"sLampe1","path":"sprites/sLampe1/sLampe1.yy",},"order":3,},
+    {"id":{"name":"fDialogue","path":"fonts/fDialogue/fDialogue.yy",},"order":2,},
     {"id":{"name":"oTriggerSublevel","path":"objects/oTriggerSublevel/oTriggerSublevel.yy",},"order":10,},
     {"id":{"name":"oPhilippe","path":"objects/oPhilippe/oPhilippe.yy",},"order":1,},
     {"id":{"name":"oSign","path":"objects/oSign/oSign.yy",},"order":17,},

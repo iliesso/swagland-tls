@@ -35,7 +35,6 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"targetX","path":"objects/oPorte/oPorte.yy",},"objectId":{"name":"oPorte","path":"objects/oPorte/oPorte.yy",},"value":"-10",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"targetY","path":"objects/oPorte/oPorte.yy",},"objectId":{"name":"oPorte","path":"objects/oPorte/oPorte.yy",},"value":"167",},
           ],"isDnd":false,"objectId":{"name":"oPorte","path":"objects/oPorte/oPorte.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":657.0,"y":656.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_105124F2","properties":[],"isDnd":false,"objectId":{"name":"oTextDialogue","path":"objects/oTextDialogue/oTextDialogue.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":544.0,"y":640.0,},
       ],"visible":true,"depth":700,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"WallAndStuff","instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_41875A01_2","properties":[],"isDnd":false,"objectId":{"name":"oFalling","path":"objects/oFalling/oFalling.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":139.0,"scaleY":6.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1312.0,"y":928.0,},
@@ -685,7 +684,6 @@
     {"name":"inst_6AF7CA70","path":"rooms/rNiv1/rNiv1.yy",},
     {"name":"inst_2DE68CD7","path":"rooms/rNiv1/rNiv1.yy",},
     {"name":"inst_6F3980AB","path":"rooms/rNiv1/rNiv1.yy",},
-    {"name":"inst_105124F2","path":"rooms/rNiv1/rNiv1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

@@ -20,9 +20,11 @@ border = 10;
 radiusx = 15;
 radiusy = 15;
 */
+
+
 //blackbox coordinates
 x1 = display_get_gui_width()/2;
-y1 = 2*(display_get_gui_height()/3);
+y1 = 2.8*(display_get_gui_height()/4);
 x2 = display_get_gui_width()/2;
 y2 = display_get_gui_height();
 
@@ -32,9 +34,10 @@ x2Target = display_get_gui_width();
 animProgress = 0;
 textProgress = 0;
 
+//message parameters
 msg = "weshe";
 length = string_length(msg);
 background = 0;
-
+size = 50;
 
 
