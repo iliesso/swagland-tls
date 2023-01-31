@@ -54,5 +54,19 @@ if (broken){
 
 	} else {  //If vase has fallen
 	hsp = 0;
+	
+	//if player has also broken the lamp in the room
+	switch (room){
+		case rMaisonspawn:
+		{
+			if (instance_exists(oLampe1)){
+				if (oLampe1.broken){
+					global.story_niv1_vase = true;	
+				}
+			}
+			break;
+		}
+		
+	}
 	}
 }

@@ -24,7 +24,7 @@ radiusy = 15;
 
 //blackbox coordinates
 x1 = display_get_gui_width()/2;
-y1 = 2.8*(display_get_gui_height()/4);
+y1 = 3*(display_get_gui_height()/4);
 x2 = display_get_gui_width()/2;
 y2 = display_get_gui_height();
 

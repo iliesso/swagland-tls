@@ -1,6 +1,8 @@
 // @description update camera
 
 //Update destination	
+
+
 if (instance_exists(follow))
 {
 	xTo = follow.x;
@@ -16,7 +18,6 @@ if (instance_exists(follow))
 //Update object position and follow
 x += (xTo - x) / cam_smoothness;
 y += (yTo - y) / cam_smoothness;
-
 
 x = clamp(x, view_w_half + buff, room_width-view_w_half - buff);     //Camera limits to room borders
 y = clamp(y, view_h_half + buff, room_height-view_h_half - buff);    //buff spares inside room space for the shake

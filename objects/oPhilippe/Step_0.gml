@@ -1,2 +1,4 @@
 /// @description philippe stuff
-PnjDialogue();
+if (text[0] != -1){
+	PnjDialogue();
+}

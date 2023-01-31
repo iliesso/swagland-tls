@@ -6,8 +6,8 @@ access = keyboard_check_pressed(ord("E"));
 
 if (instance_exists(oOui)){
 	if (point_in_circle(oOui.x, oOui.y, x, y, radius)){
-	
-		if (!instance_exists(oText) && !instance_exists(indic)){
+	if (!instance_exists(oText)){
+		if (!instance_exists(indic)){
 		    indic = instance_create_layer(x, y-16, layer, oIndic);	
 		}
 		
@@ -27,6 +27,7 @@ if (instance_exists(oOui)){
 			}
 			
 		}
+	}
 	} 
 	else {
 		if (instance_exists(indic)){

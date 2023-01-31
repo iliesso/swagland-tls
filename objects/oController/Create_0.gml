@@ -40,3 +40,9 @@ global.keySprint = vk_shift;
 global.keyAction = ord("E");
 
 #endregion
+
+
+#region //story variables
+global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
+
+#endregion

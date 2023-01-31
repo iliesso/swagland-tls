@@ -15,7 +15,7 @@ shake_length = 0;   //60 frames, so 1 second of screen shaking
 shake_magnitude = 0;   //the higher, the more the screen shakes
 shake_remain = shake_magnitude;   //what remains to shake before stopping
 buff = 32;   //buffer, to avoid cam from escaping borders
-
+zoomed = false;
 
 //Parallax
 //higher: faster background movement
@@ -26,5 +26,5 @@ parlx2 = 2      //trees
 //Camera zooming
 camwidthMenu = 1000;
 camheightMenu = 750;
-camwidthGame = 288;
-camheightGame = 216;
+camwidthGame = RESOL_W;
+camheightGame = RESOL_H;
