@@ -23,7 +23,7 @@ global.targetY = -1;
 
 #region //Camera variables
 //No need to define camHeight as it will always be camWidth*0.75.
-global.camWidth = 288;
+global.camWidth = RESOL_W;
 
 #endregion
 

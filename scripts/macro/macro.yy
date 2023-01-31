@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "MACROS",
+  "name": "macro",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
