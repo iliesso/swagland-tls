@@ -3,6 +3,7 @@
   "resourceVersion": "1.6",
   "name": "swagland-tls",
   "resources": [
+    {"id":{"name":"Script8","path":"scripts/Script8/Script8.yy",},"order":10,},
     {"id":{"name":"sTilesHouse1","path":"sprites/sTilesHouse1/sTilesHouse1.yy",},"order":2,},
     {"id":{"name":"sLogoSwagland","path":"sprites/sLogoSwagland/sLogoSwagland.yy",},"order":3,},
     {"id":{"name":"oOptionsSound","path":"objects/oOptionsSound/oOptionsSound.yy",},"order":7,},
