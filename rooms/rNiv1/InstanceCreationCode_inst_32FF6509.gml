@@ -1,0 +1,1 @@
+text = ("On m'a dit que maintenir "+ string(global.keySprint) + " permettait de courir plus vite... Ou un truc du genre.");

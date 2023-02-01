@@ -25,7 +25,8 @@ radiusy = 15;
 speaker = "oPhilippe";
 speakerEntrance = 15;  //higher = SLOWER
 sprite_x_target_nocam = RESOL_W*0.7;
-sprite_x_target = 1.14;
+sprite_x_target = 1.15;
+sprite_y_target = 1.095;
 spr = noone
 
 //blackbox coordinates

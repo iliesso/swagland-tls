@@ -3,7 +3,7 @@
 //Sprite apparition
 if (instance_exists(oCamera)){  //if there is a camera
 	if (!instance_exists(spr)){
-		spr = instance_create_layer(oCamera.x*1.8, oCamera.y*1.095,"HUD", asset_get_index(speaker));
+		spr = instance_create_layer(oCamera.x*1.8, oCamera.y*sprite_y_target,"HUD", asset_get_index(speaker));
 		with (spr){
 			image_xscale = 7;
 			image_yscale = 7;
