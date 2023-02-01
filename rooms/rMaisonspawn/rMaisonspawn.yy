@@ -31,7 +31,7 @@
           ],"isDnd":false,"objectId":{"name":"oTriggerSublevel","path":"objects/oTriggerSublevel/oTriggerSublevel.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":-81.0,"y":160.0,},
       ],"visible":true,"depth":400,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Mobs","instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_67CF3BCF","properties":[],"isDnd":false,"objectId":{"name":"oSylvie","path":"objects/oSylvie/oSylvie.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":113.0,"y":169.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_67CF3BCF","properties":[],"isDnd":false,"objectId":{"name":"oSylvie","path":"objects/oSylvie/oSylvie.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":113.0,"y":169.0,},
       ],"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Backend","instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_74B411E4_2_1","properties":[],"isDnd":false,"objectId":{"name":"oTransition","path":"objects/oTransition/oTransition.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":72.0,"y":24.0,},
@@ -201,7 +201,6 @@
     {"name":"inst_395734E5","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
     {"name":"inst_52CEB1A8","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
     {"name":"inst_79DD239C","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
-    {"name":"inst_67CF3BCF","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
     {"name":"inst_472BCDEF","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
     {"name":"inst_340DBF1A","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
     {"name":"inst_68797033","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
@@ -220,6 +219,7 @@
     {"name":"inst_20FB6CCD","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
     {"name":"inst_2315AC78","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
     {"name":"inst_7A98A4E0","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
+    {"name":"inst_67CF3BCF","path":"rooms/rMaisonspawn/rMaisonspawn.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

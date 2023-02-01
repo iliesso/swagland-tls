@@ -46,3 +46,14 @@ global.keyAction = ord("E");
 global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
 
 #endregion
+
+
+//***************
+//**GAME VALUES**
+//***************
+
+#region //Persistant game values
+global.playerName = "Warda";
+
+#endregion
+

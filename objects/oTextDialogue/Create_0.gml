@@ -21,6 +21,12 @@ radiusx = 15;
 radiusy = 15;
 */
 
+//NPC at the origin
+speaker = "oPhilippe";
+speakerEntrance = 15;  //higher = SLOWER
+sprite_x_target_nocam = RESOL_W*0.7;
+sprite_x_target = 1.14;
+spr = noone
 
 //blackbox coordinates
 x1 = display_get_gui_width()/2;
@@ -35,9 +41,8 @@ animProgress = 0;
 textProgress = 0;
 
 //message parameters
+page = 0;
 msg = "weshe";
 length = string_length(msg);
 background = 0;
 size = 50;
-
-
