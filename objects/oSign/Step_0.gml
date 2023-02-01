@@ -2,7 +2,7 @@
 
 //if player in radius
 
-access = keyboard_check_pressed(ord("E"));
+access = keyboard_check_pressed(global.keyAction) || mouse_check_button_pressed(mb_right);
 
 if (instance_exists(oOui)){
 	if (point_in_circle(oOui.x, oOui.y, x, y, radius)){
