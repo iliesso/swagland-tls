@@ -13,6 +13,7 @@ if (instance_exists(oOui)){
 		
 		//on interact key press
 		if (access){
+			
 			instance_destroy(indic);
 			with (instance_create_layer(x, y-16, layer, oText)){
 		

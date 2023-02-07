@@ -3,3 +3,4 @@
 //radius where the player can read the sign
 radius = 48;
 indic = noone;
+length = 0;

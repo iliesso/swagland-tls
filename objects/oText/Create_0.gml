@@ -2,8 +2,8 @@
 
 spdSlow = 0.1;
 spdNormal = 0.25;
-spdFast = 0.7;
-spd = spdNormal;
+spdFast = 0.5;
+spd = spdFast;
 
 letters = 0;
 
