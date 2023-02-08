@@ -42,8 +42,15 @@ global.keyAction = ord("E");
 #endregion
 
 
-#region //story variables
+//*******************
+//**STORY VARIABLES**
+//*******************
+
+
+#region //Arc 1
+
 global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
+global.story_niv1_sprint = false;  //joueur peut sprinter
 
 #endregion
 
