@@ -49,8 +49,15 @@ global.keyAction = ord("E");
 
 #region //Arc 1
 
-global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
-global.story_niv1_sprint = false;  //joueur peut sprinter
+
+	#region //Niv 1
+	global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
+	global.story_niv1_sprint = false;  //joueur débloque le sprint
+	global.story_niv1_philippe_rencontre = false;  //première rencontre avec philippe
+	global.story_niv1_philippe_rencontre2 = false;  //après avoir parlé à philippe une deuxième fois
+	global.story_niv1_philippe_rencontre3 = false;
+	#endregion
+
 
 #endregion
 
