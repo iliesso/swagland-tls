@@ -32,4 +32,4 @@ You fell somewhere. You're a bit confused... So you decide to walk and find out 
 
 This is a very early version! 
 
-Updates incoming, probably.
+Updates are ready and incoming (probably).
