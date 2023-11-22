@@ -73,12 +73,12 @@ if (menu_y > gui_height+200) && (menu_committed != -1){
 		case 3:  //3 = New Game
 			if (file_exists(SAVEFILE)){
 				if (warnbox == noone){
-				warnbox = instance_create_layer(gui_width/2,gui_height/2,"warningmsg",oTextboxGun,{ texte: warningMsg });
-				break;
+					warnbox = instance_create_layer(gui_width/2,gui_height/2,"warningmsg",oTextboxGun,{ texte: warningMsg });
+					break;
 				}
 				break;
 			} else {
-				SlideTransition(TRANS_MODE.GOTO,rDev1); 
+				SlideTransition(TRANS_MODE.GOTO,rNiv1); 
 				break;
 			}
 			break;

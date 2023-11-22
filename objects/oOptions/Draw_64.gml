@@ -8,12 +8,13 @@ draw_set_halign(fa_center);
 for (var i = 0; i < menu_items; i++){
 	var offset = 1;		//set up text contour
 	var txt = menu[i];		//display all the different options
+	var col = c_white;
 	if (menu_cursor == i){
 		txt = string_insert(">> ",txt ,0);	
-		var col = c_white;	
+		col = c_white;	
 	}
 	else {             //if not selected: draw text in gray
-		var col = c_gray;
+		col = c_gray;
 	}
 	
 	var xx = menu_x;

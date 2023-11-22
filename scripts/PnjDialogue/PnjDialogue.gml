@@ -1,4 +1,8 @@
-///@description puts indic marker on top of object
+/**@description puts indic marker on top of object, 
+* then on keyboard press, destroy indic, 
+* show dialogue
+* 
+*/
 
 function PnjDialogue(){
 if (instance_exists(oOui)){

@@ -1,6 +1,7 @@
 /// @description Background control
+//@arg layerName: 
 //Plus on se dirige vers les extrémités de l'écran, plus le background défile vite.
-
+//@param layerName Background layer name
 function BackgroundFollow(layerName){
 
 
@@ -21,7 +22,7 @@ xSpd = x/(gui_width/2 - menu_background_speed);    //La vitesse de défilement d
 
 
 
-layer_hspeed(argument0, xSpd);
+layer_hspeed(layerName, xSpd);
 
 
 
@@ -36,5 +37,5 @@ ySpd = y/(gui_height/2 - (menu_background_speed*0.75));    // menu_background_sp
 
 
 
-layer_vspeed(argument0, ySpd);
+layer_vspeed(layerName, ySpd);
 }

@@ -6,11 +6,11 @@ function ScreenShake(magnitude, frames)
 {
 	with(oCamera)
 	{
-		if(argument0 > shake_remain)
+		if(magnitude > shake_remain)
 		{
-			shake_magnitude = argument0;
+			shake_magnitude = magnitude;
 			shake_remain = shake_magnitude;
-			shake_length= argument1;
+			shake_length= frames;
 		}
 	}
 }
