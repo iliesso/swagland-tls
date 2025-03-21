@@ -3,16 +3,16 @@
 switch (room){
 	case rMaisonspawn:
 	{
+		dialogues = ds_map_create();
 		if (!global.story_niv1_vase){
-			text[0] = "...";
+			ds_map_add(dialogues, 2, [
+				["...", sSylvie],
+			]);
 		} else{
-			text[0] = "Et qui va nettoyer apres...";	
+			ds_map_add(dialogues, 2, [
+				["Et qui va nettoyer ton bazar, après...", sSylvie],
+			]);	
 		}
 		break;	
 	}
-}
-
-
-if (text != -1){
-	PnjDialogue();
 }

@@ -14,9 +14,11 @@ global.fullscreen = false;
 
 
 #region //Player variables
-global.target = -1;
-global.targetX = -1;
-global.targetY = -1;
+global.target_room = -1;
+global.targetX = 79;
+global.targetY = 250;
+global.interactionRadius = 48;
+global.interaction_radius_recoil_zone = 10;
 
 #endregion
 
@@ -47,15 +49,17 @@ global.keyAction = ord("E");
 //*******************
 
 
-#region //Arc 1
+#region //Acte 1: Début
+
+	
+	#region //Arc Début
 
 
-	#region //Niv 1
-	global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
-	global.story_niv1_sprint = false;  //joueur débloque le sprint
-	global.story_niv1_philippe_rencontre = false;  //première rencontre avec philippe
-	global.story_niv1_philippe_rencontre2 = false;  //après avoir parlé à philippe une deuxième fois
-	global.story_niv1_philippe_rencontre3 = false;
+		#region //Niv1
+		global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
+		global.story_niv1_philippe_dialog = 0;  //première rencontre avec philippe
+		#endregion
+	
 	#endregion
 
 

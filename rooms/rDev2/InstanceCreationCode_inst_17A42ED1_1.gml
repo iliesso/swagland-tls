@@ -1,1 +1,1 @@
-target = rDev1;  //Move player to second dev room
+target_room = rDev1;  //Move player to second dev room

@@ -32,7 +32,7 @@ if (mode != TRANS_MODE.OFF)
 			case TRANS_MODE.GOTO:
 			{
 				mode = TRANS_MODE.INTRO;
-				room_goto(target);
+				room_goto(target_room);
 				break;
 			}
 			case TRANS_MODE.RESTART:

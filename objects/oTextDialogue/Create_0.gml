@@ -43,7 +43,7 @@ textProgress = 0;
 
 //message parameters
 page = 0;
-msg = "weshe";
-length = string_length(msg);
+msg = ["Lorem Ipsum... Voilà quoi."];
+length = 0; // string_length(msg);
 background = 0;
 size = 50;

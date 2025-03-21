@@ -1,0 +1,6 @@
+Interactive tooltip
+
+Les objets interactifs pourraient avoir un petit texte (tooltip) par-dessus.
+Peut-être leur nom ou une indication.
+Tooltip uniquement sur les items ? Sur les PNJ pour leurs noms quand on les connaît ?
+pas sûr de garder cette idée

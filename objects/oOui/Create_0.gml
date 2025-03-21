@@ -39,3 +39,5 @@ if (global.targetX != -1){
 	y = global.targetY;
 }
 
+//indic
+indic_id = 001;

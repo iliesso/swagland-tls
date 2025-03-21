@@ -88,9 +88,9 @@ if (menu_y > gui_height+200) && (menu_committed != -1){
 			}
 			else {
 			var file = file_text_open_read(SAVEFILE);
-			var target = file_text_read_real(file);
+			var target_room = file_text_read_real(file);
 			file_text_close(file);
-			SlideTransition(TRANS_MODE.GOTO,target);
+			SlideTransition(TRANS_MODE.GOTO,target_room);
 			}
 			break;
 		case 1:   //1 = Options

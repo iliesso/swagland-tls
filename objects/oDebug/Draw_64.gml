@@ -1,7 +1,7 @@
 if (show == true) 
 {
 
-	draw_set_color(c_black);
+	draw_set_color(c_dkgrey);
 	draw_text(16,44,"fps: " + string(fps));
 	draw_set_halign(fa_left);
 	draw_text(16,64,"R: redemarrer le jeu");

@@ -17,4 +17,4 @@ enum TRANS_MODE     //Enumeration pour résumer les étapes du processus de tran
 
 mode = TRANS_MODE.INTRO; 
 percent = 0.6;          //transition speed
-target = room;        //where we wanna go during transition
+target_room = room;     //where we wanna go during transition
