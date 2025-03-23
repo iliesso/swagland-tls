@@ -3,7 +3,7 @@
 // Peut-on interagir avec l'objet ?
 can_interact = true;
 
-// Texte à afficher quand on est proche (optionnel)
+// Texte à afficher quand on est proche
 interact_text = "";
 
 // Distance verticale de l'indicateur par rapport au centre de l'objet

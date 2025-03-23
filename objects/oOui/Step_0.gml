@@ -282,7 +282,7 @@ if (_nearest_interactive != noone)
                 show_debug_message("Interacting with: " + object_get_name(object_index));
                 
                 // Vérifier que la méthode interact existe
-                if (is_method(self.interact)) {
+                if (variable_instance_exists(id, "interact")) {
                     interact();
                 } else {
                     show_debug_message("ERROR: interact() method not found in " + object_get_name(object_index));
