@@ -1,0 +1,3 @@
+Ce système gère les interactions narratives avec les PNJs,en fonction d'états de dialogue.
+Chaque état contient des lignes de dialogue, des scripts conditionnels, et des actions spécifiques (début avec on_enter, fin avec on_exit).
+

@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"doc_DialogueSystem",
+  "name":"doc_DialogueSystem",
+  "parent":{
+    "name":"dialogue",
+    "path":"folders/Scripts/dialogue.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
