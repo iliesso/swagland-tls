@@ -1,16 +1,10 @@
-/// @description Configuration de base pour un PNJ
-function init_pnj() {
-    // Hériter des propriétés de base d'un objet interactif
-    event_inherited();
+/// @description Script de configuration de base pour un PNJ
+function init_pnj(name) {
     
     // Propriétés du PNJ
-    nom = "PNJ sans nom";
+    nom = name;
     dialogue_system = new DialogueSystem();
-    story_progress = 0;
     
-    // Configuration de l'interaction
-    interact_text = "Parler";
-    indicator_offset_y = 32;
     
     // Méthode d'interaction
     interact = function() {

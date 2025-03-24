@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Script10",
+  "%Name":"init_pnj",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Script10",
+  "name":"init_pnj",
   "parent":{
-    "name":"dialogue",
-    "path":"folders/Scripts/dialogue.yy",
+    "name":"dialogue & pnj",
+    "path":"folders/Scripts/dialogue & pnj.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

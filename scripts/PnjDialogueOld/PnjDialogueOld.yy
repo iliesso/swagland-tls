@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PnjDialogueOld",
   "parent":{
-    "name":"dialogue",
-    "path":"folders/Scripts/dialogue.yy",
+    "name":"dialogue & pnj",
+    "path":"folders/Scripts/dialogue & pnj.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

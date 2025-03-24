@@ -55,3 +55,42 @@ if (keyboard_check_pressed(global.keyAction) || mouse_check_button_pressed(mb_ri
 		textProgress = length;
 	}
 }
+
+///////NEW
+/// @description Contrôle du dialogue
+
+// Si le dialogue est terminé et qu'on appuie sur la touche d'action
+if (completed && (keyboard_check_pressed(global.keyAction) || mouse_check_button_pressed(mb_left))) {
+    // Trouver le PNJ qui a initié le dialogue
+    var pnj = noone;
+    
+    with (abstract_interactive) {
+        if (object_is_ancestor(object_index, oPNJ) && variable_instance_exists(id, "dialogue_system")) {
+            if (dialogue_system.current_dialogue != noone) {
+                pnj = id;
+                break;
+            }
+        }
+    }
+    
+    if (pnj != noone) {
+        // Si c'est la dernière ligne de dialogue
+        if (!pnj.dialogue_system.advance_dialogue(pnj)) {
+            // Fin du dialogue, incrémenter la progression si nécessaire
+            if (is_real(pnj.dialogue_system.current_state)) {
+                pnj.story_progress += 1;
+            }
+            
+            // Gestion des quêtes ou autres effets post-dialogue
+            if (pnj.dialogue_system.current_state == "quest_complete") {
+                global.quest_chapeau_rewarded = true;
+                global.gold += 50;
+                // Jouer un son de récompense
+                audio_play_sound(sndReward, 10, false);
+            }
+        }
+    }
+    
+    // Détruire la boîte de dialogue actuelle
+    instance_destroy();
+}

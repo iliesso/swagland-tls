@@ -4,6 +4,7 @@ function DialogueSystem() constructor {
 	current_state = "default";		  // Etat actuel (etat que le pnj va te dire)
     current_dialogue = noone;		  // Lignes à afficher pour l'état actuel
     dialogue_index = 0;				  // Suivi de la progression dans un dialogue
+    auto_return_camera = true;        // Rendre la caméra au joueur automatiquement. Peut être modifié par le PNJ ou une cinématique
     
     /// @function add_dialogue_state(state_name, dialogues_array, conditions_script, on_enter_script)
     /// @param {string|real} state_name Id de l'état de dialogue
@@ -129,8 +130,10 @@ function DialogueSystem() constructor {
             hascontrol = true;
         }
 
-        with (oCamera) {
-            follow = oOui;
+        if (auto_return_camera) {
+            with (oCamera) {
+                follow = oOui;
+            }
         }
 
         current_dialogue = noone;

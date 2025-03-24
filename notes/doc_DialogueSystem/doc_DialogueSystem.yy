@@ -3,8 +3,8 @@
   "%Name":"doc_DialogueSystem",
   "name":"doc_DialogueSystem",
   "parent":{
-    "name":"dialogue",
-    "path":"folders/Scripts/dialogue.yy",
+    "name":"dialogue & pnj",
+    "path":"folders/Scripts/dialogue & pnj.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",
