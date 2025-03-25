@@ -4,7 +4,7 @@ function DialogueSystem() constructor {
 	current_state = "default";		  // Etat actuel (etat que le pnj va te dire)
     current_dialogue = noone;		  // Lignes à afficher pour l'état actuel
     dialogue_index = 0;				  // Suivi de la progression dans un dialogue
-    auto_return_camera = true;        // Rendre la caméra au joueur automatiquement. Peut être modifié par le PNJ ou une cinématique
+    auto_return_camera = true;        // Rendre la caméra au joueur automatiquement. Par défaut, true. On peut vouloir mettre false dans certains cas, comme une cinématique, ou faire en sorte que la caméra continue de suivre un pnj qui se déplace. Dans ce cas, avant le start_dialogue, on peut mettre dialogue_system.auto_return_camera = false.
     
     /// @function add_dialogue_state(state_name, dialogues_array, conditions_script, on_enter_script)
     /// @param {string|real} state_name Id de l'état de dialogue
@@ -75,11 +75,7 @@ function DialogueSystem() constructor {
         }
 
         // Bloquer le joueur
-        with (oOui) {
-            hascontrol = false;
-            hsp = 0;
-            vsp = 0;
-        }
+        player_lock();
 
         advance_dialogue(pnj_instance);
         return true;
@@ -102,12 +98,12 @@ function DialogueSystem() constructor {
             msg = line[0];
             length = string_length(msg);
             
-            // Si un sprite est spécifié
+            // Si un sprite est spécifié, changer le sprite du pnj
             if (array_length(line) > 1 && sprite_exists(line[1])) {
                 pnj_instance.sprite_index = line[1];
             }
             
-            // Si un son est spécifié
+            // Si un son est spécifié, jouer le son
             if (array_length(line) > 2 && audio_exists(line[2])) {
                 audio_play_sound(line[2], 10, false);
             }
@@ -126,9 +122,7 @@ function DialogueSystem() constructor {
         }
 
         // Rendre le contrôle au joueur
-        with (oOui) {
-            hascontrol = true;
-        }
+        player_unlock();
 
         if (auto_return_camera) {
             with (oCamera) {

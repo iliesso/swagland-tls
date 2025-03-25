@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerDamage",
+  "%Name":"player_unlock",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerDamage",
+  "name":"player_unlock",
   "parent":{
     "name":"player state",
     "path":"folders/Scripts/player state.yy",

@@ -29,6 +29,12 @@ global.camWidth = RESOL_W;
 
 #endregion
 
+#region //PNJ Manager
+
+pnj_states = ds_map_create();
+
+#endregion
+
 
 //********
 //**KEYS**
@@ -57,7 +63,6 @@ global.keyAction = ord("E");
 
 		#region //Niv1
 		global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
-		global.story_niv1_philippe_dialog = 0;  //première rencontre avec philippe
 		#endregion
 	
 	#endregion

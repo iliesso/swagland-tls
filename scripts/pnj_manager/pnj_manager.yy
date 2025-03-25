@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"PlayerDamage",
+  "%Name":"pnj_manager",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PlayerDamage",
+  "name":"pnj_manager",
   "parent":{
-    "name":"player state",
-    "path":"folders/Scripts/player state.yy",
+    "name":"dialogue & pnj",
+    "path":"folders/Scripts/dialogue & pnj.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
