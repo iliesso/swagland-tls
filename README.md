@@ -4,12 +4,14 @@
 
 
 
-A GameMaker platform game.
+A GameMaker-made platform game.
 
 
 ## * * *
 
-You fell somewhere. You're a bit confused... So you decide to walk and find out what this place is!
+Every four years, the whole world is captivated by a major event: the tournament to elect the new SwagMaster.
+Since your childhood, you admire the greats that have shared this title, and dream of one thing: to carve your name into history as the new SwagMaster.
+But you have a serious problem. You're very... ugly.
 
 ## How to install?
 
@@ -17,10 +19,10 @@ You fell somewhere. You're a bit confused... So you decide to walk and find out 
 
 ## Features
 
-- Platforms
 - Adventures !
-- Talk to characters, you may (or may not) have interesting conversations
-- Other features you know haha
+- Thinking !
+- Get to know people, you may (or may not) have interesting conversations
+- More things just play the game
 
 
 
