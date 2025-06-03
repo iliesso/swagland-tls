@@ -21,9 +21,8 @@ dialogue_system.add_dialogue_state(1, [
 dialogue_system.add_dialogue_state(2, [
     ["J'aime rester ici, le matin.", sPhilippe],
     ["Je me sens libre, dans la nature.", sPhilippe]
-], function() {
-    return narrative_progress == 1;
+], function(){
+    return narrative_progress == 0;
 });
-
 
 #endregion

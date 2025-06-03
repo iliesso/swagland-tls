@@ -12,9 +12,12 @@ function DialogueSystem() constructor {
     /// @param {function} conditions_script (optionnel) Conditions pour activer l'état
     /// @param {function} on_enter_script (optionnel) Script à exécuter à l'entrée de l'état de dialogue
     /// @param {function} on_exit_script (optionnel) Script à exécuter à la sortie de l'état de dialogue
-    /// @description Ajoute un état de dialogue. Un état de dialogue est une interaction.
+    /// @description Créé un état de dialogue. Un état de dialogue est une interaction.
     add_dialogue_state = function(state_name, dialogues_array, conditions_script = undefined, on_enter_script = undefined, on_exit_script = undefined) {
+    //var owner = id;  // L'instance qui possède le DialogueSystem
+    
     var state = {
+        //owner: owner,  // Référence à l'instance qui possède ce DialogueSystem
         lines: dialogues_array,
         condition: conditions_script,
         on_enter: on_enter_script,

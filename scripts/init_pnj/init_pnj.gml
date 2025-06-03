@@ -3,10 +3,10 @@
 function init_pnj(name, _pnj_id) {
     nom = name;
 	pnj_id = _pnj_id;
-	var _data = get_pnj_data(pnj_id); //Valeurs du PNJ dans obj_controller
-    affinity = data.affinity;
-	narrative_progress = data.narrative_progress;
-	data_ref = _data; //Référence directe aux valeurs du PNJ dans obj_controller
+	var _pnj_data = get_pnj_data(pnj_id); //Valeurs du PNJ dans obj_controller
+    affinity = _pnj_data.affinity;
+	narrative_progress = _pnj_data.narrative_progress;
+	data_ref = _pnj_data; //Référence directe aux données du PNJ dans le controller
     
     if (!variable_instance_exists(id, "dialogue_system")) {
         dialogue_system = new DialogueSystem();
