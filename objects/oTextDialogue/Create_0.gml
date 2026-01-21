@@ -1,39 +1,27 @@
-/// @description text bails (panneau)
-/*
-spdSlow = 0.1;
-spdNormal = 0.25;
-spdFast = 0.7;
-spd = spdNormal;
+/// @description Boîte de dialogue - affiche le texte d'un PNJ
 
-letters = 0;
+// === RÉFÉRENCES (définies par DialogueSystem) ===
+pnj_ref = noone;              // Instance du PNJ qui parle
+dialogue_system_ref = noone;  // Référence au DialogueSystem pour callbacks
 
-text = "Wesh la famille!\n...\nVoila quoi...";
-
-length = string_length(text);
-
-text_current = "";
-
-w = 0;
-h = 0;
-border = 10;
-
-radiusx = 15;
-radiusy = 15;
-*/
-
-//NPC at the origin
-speaker = "oPhilippe";
-speakerEntrance = 15;  //higher = SLOWER
-sprite_x_target_nocam = RESOL_W*0.7;
+// === SPEAKER / PORTRAIT ===
+speaker = "PNJ";              // Nom du PNJ (pour affichage texte)
+portrait_sprite = noone;      // Sprite du portrait à afficher
+speakerEntrance = 15;         // Vitesse d'entrée du portrait (higher = slower)
+sprite_x_target_nocam = RESOL_W * 0.7;
 sprite_x_target = 1.15;
 sprite_y_target = 1.095;
-spr = noone
 
-//blackbox coordinates
-x1 = display_get_gui_width()/2;
+// Position du portrait (animée)
+portrait_x = 0;
+portrait_y = 0;
+portrait_target_x = 0;
+
+// === ANIMATION BOÎTE ===
+x1 = display_get_gui_width() / 2;
 y1 = 0;
-x2 = display_get_gui_width()/2;
-y2 = display_get_gui_height()/4;
+x2 = display_get_gui_width() / 2;
+y2 = display_get_gui_height() / 4;
 
 x1Target = 0;
 x2Target = display_get_gui_width();
@@ -41,9 +29,9 @@ x2Target = display_get_gui_width();
 animProgress = 0;
 textProgress = 0;
 
-//message parameters
+// === MESSAGE ===
 page = 0;
-msg = ["Lorem Ipsum... Voilà quoi."];
-length = 0; // string_length(msg);
+msg = "...";
+length = 0;
 background = 0;
 size = 50;

@@ -1,33 +1,28 @@
 /// @description Script de configuration de base pour un PNJ
-/// @param {string} name Nom du PNJ
+/// @param {string} name - Nom affiché du PNJ
+/// @param {string} _pnj_id - Identifiant unique pour la persistence
 function init_pnj(name, _pnj_id) {
     nom = name;
-	pnj_id = _pnj_id;
-	var _pnj_data = get_pnj_data(pnj_id); //Valeurs du PNJ dans obj_controller
-    affinity = _pnj_data.affinity;
-	narrative_progress = _pnj_data.narrative_progress;
-	data_ref = _pnj_data; //Référence directe aux données du PNJ dans le controller
+    pnj_id = _pnj_id;
     
-    if (!variable_instance_exists(id, "dialogue_system")) {
-        dialogue_system = new DialogueSystem();
-    }
-    
-	// Charger les données du PNJ depuis oPNJManager
+    // Charger les données persistantes depuis le controller
     load_pnj_data(id, pnj_id);
-	
+    
+    // Créer le système de dialogue et le lier à cette instance
+    dialogue_system = new DialogueSystem();
+    dialogue_system.set_owner(id);
+    
+    /// @function interact()
+    /// @description Appelée quand le joueur interagit avec ce PNJ
     interact = method(id, function() {
         show_debug_message("Interaction avec " + nom);
         
-        if (variable_instance_exists(id, "dialogue_system")) {
-            dialogue_system.start_dialogue(id);
-            
-            if (instance_exists(oCamera)) {
-                with (oCamera) {
-                    follow = other.id;
-                }
-            }
-        } else {
-            show_debug_message("ERREUR: dialogue_system n'existe pas pour " + nom);
+        // Démarrer le dialogue (le owner est déjà défini)
+        dialogue_system.start_dialogue();
+        
+        // La caméra suit le PNJ pendant le dialogue
+        if (instance_exists(oCamera)) {
+            oCamera.follow = id;
         }
     });
 }
