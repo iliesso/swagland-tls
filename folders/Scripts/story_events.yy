@@ -1,0 +1,11 @@
+{
+  "%Name":"story_events",
+  "children":[
+    {"name":"handle_room_exit_events","path":"folders/Scripts/story_events/handle_room_exit_events.yy",},
+    {"name":"story_events_niv1","path":"folders/Scripts/story_events/story_events_niv1.yy",},
+  ],
+  "folderPath":"folders/Scripts/story_events.yy",
+  "name":"story_events",
+  "resourceType":"GMFolder",
+  "resourceVersion":"2.0",
+}

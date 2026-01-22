@@ -52,7 +52,12 @@ if (broken){
 	}
 	y+= vsp;
 
-	} else {  //If vase has fallen
+	} else {  //If lamp has fallen
 	hsp = 0;
+	
+	// Vérifier si tous les objets de Sylvie sont cassés
+	if (room == rMaisonspawn) {
+		story_niv1_check_sylvie_objects();
+	}
 	}
 }

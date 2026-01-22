@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"story_events_niv1",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"story_events_niv1",
+  "parent":{
+    "name":"story_events",
+    "path":"folders/Scripts/story_events.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

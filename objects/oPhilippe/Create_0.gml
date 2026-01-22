@@ -31,7 +31,7 @@ dialogue_system.add_dialogue_state(2, [
     ["Je me sens libre, dans la nature.", sPhilippe]
 ], 
 function(pnj) {
-    return pnj.narrative_progress == 1;
+    return pnj.narrative_progress == 2;
 });
 
 #endregion

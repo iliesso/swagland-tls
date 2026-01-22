@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"handle_room_exit_events",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"handle_room_exit_events",
+  "parent":{
+    "name":"story_events",
+    "path":"folders/Scripts/story_events.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

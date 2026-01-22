@@ -1,13 +1,4 @@
-/// @description On room change
+/// @description On room end (avant de changer de room)
 
-switch (room){
-	case rMaisonspawn:
-	{
-		if (global.story_niv1_vase){
-			global.story_niv1_vase = false;	
-		}
-		break;
-	}
-	
-	
-}
+// Gérer tous les événements de sortie de room
+handle_room_exit_events(room);
