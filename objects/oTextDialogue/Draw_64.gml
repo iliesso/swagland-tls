@@ -7,11 +7,11 @@ if (portrait_sprite != noone && sprite_exists(portrait_sprite)) {
         0,
         portrait_x,
         portrait_y,
-        7,     // image_xscale
-        7,     // image_yscale
-        23,    // image_angle
+        portrait_scale,   // image_xscale
+        portrait_scale,   // image_yscale
+        portrait_angle,   // image_angle
         c_white,
-        1      // alpha
+        1                 // alpha
     );
 }
 

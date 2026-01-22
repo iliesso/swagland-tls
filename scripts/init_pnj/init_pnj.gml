@@ -15,6 +15,11 @@ function init_pnj(name, _pnj_id) {
     /// @function interact()
     /// @description Appelée quand le joueur interagit avec ce PNJ
     interact = method(id, function() {
+        // Ne rien faire si un dialogue est déjà en cours
+        if (dialogue_system.is_in_dialogue()) {
+            return;
+        }
+        
         show_debug_message("Interaction avec " + nom);
         
         // Démarrer le dialogue (le owner est déjà défini)

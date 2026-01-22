@@ -8,6 +8,9 @@ function DialogueSystem() constructor {
     // Référence au PNJ propriétaire (défini lors de l'init)
     owner = noone;
     
+    // Référence à l'instance oTextDialogue active
+    active_textbox = noone;
+    
     // État actuel du dialogue
     current_state = "default";
     current_dialogue = noone;
@@ -145,12 +148,10 @@ function DialogueSystem() constructor {
         
         var line = current_dialogue[dialogue_index];
         
-        // Préparer les données pour l'instance de dialogue
+        // Préparer les données
         var _speaker = pnj.nom;
         var _msg = is_array(line) ? line[0] : line;
         var _length = string_length(_msg);
-        var _pnj = pnj;
-        var _dialogue_sys = self;
         
         // Extraire le sprite du portrait si spécifié dans la ligne
         var _portrait_spr = noone;
@@ -158,18 +159,35 @@ function DialogueSystem() constructor {
             _portrait_spr = line[1];
         }
         
-        // Créer la boîte de dialogue
-        var text_instance = instance_create_layer(pnj.x, pnj.y - 16, "Instances", oTextDialogue);
-        text_instance.speaker = _speaker;
-        text_instance.msg = _msg;
-        text_instance.length = _length;
-        text_instance.pnj_ref = _pnj;
-        text_instance.dialogue_system_ref = _dialogue_sys;
-        text_instance.portrait_sprite = _portrait_spr;
-        
-        // Appliquer le sprite au PNJ si spécifié
-        if (_portrait_spr != noone) {
-            pnj.sprite_index = _portrait_spr;
+        // Vérifier si on a déjà une textbox active
+        if (active_textbox != noone && instance_exists(active_textbox)) {
+            // Mettre à jour l'instance existante
+            active_textbox.msg = _msg;
+            active_textbox.length = _length;
+            active_textbox.textProgress = 0;
+            
+            // Mettre à jour le portrait seulement si spécifié
+            if (_portrait_spr != noone) {
+                active_textbox.portrait_sprite = _portrait_spr;
+                pnj.sprite_index = _portrait_spr;
+            }
+        } else {
+            // Créer une nouvelle boîte de dialogue
+            var text_instance = instance_create_layer(pnj.x, pnj.y - 16, "Instances", oTextDialogue);
+            text_instance.speaker = _speaker;
+            text_instance.msg = _msg;
+            text_instance.length = _length;
+            text_instance.pnj_ref = pnj;
+            text_instance.dialogue_system_ref = self;
+            text_instance.portrait_sprite = _portrait_spr;
+            
+            // Stocker la référence
+            active_textbox = text_instance;
+            
+            // Appliquer le sprite au PNJ si spécifié
+            if (_portrait_spr != noone) {
+                pnj.sprite_index = _portrait_spr;
+            }
         }
         
         // Jouer le son si spécifié
@@ -198,6 +216,12 @@ function DialogueSystem() constructor {
                 update_pnj_data_from_pnj(pnj);
             }
         }
+        
+        // Détruire la textbox active
+        if (active_textbox != noone && instance_exists(active_textbox)) {
+            instance_destroy(active_textbox);
+        }
+        active_textbox = noone;
 
         player_unlock();
 
