@@ -2,7 +2,7 @@
   "$GMProject":"v1",
   "%Name":"swagland-tls",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -53,7 +53,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"swagland-tls",
   "resources":[
@@ -112,6 +112,7 @@
     {"id":{"name":"DialogueSystem","path":"scripts/DialogueSystem/DialogueSystem.yy",},},
     {"id":{"name":"DrawSetText","path":"scripts/DrawSetText/DrawSetText.yy",},},
     {"id":{"name":"earnSprint","path":"scripts/earnSprint/earnSprint.yy",},},
+    {"id":{"name":"handle_room_exit_events","path":"scripts/handle_room_exit_events/handle_room_exit_events.yy",},},
     {"id":{"name":"init_pnj","path":"scripts/init_pnj/init_pnj.yy",},},
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},},
     {"id":{"name":"player_lock","path":"scripts/player_lock/player_lock.yy",},},
@@ -121,7 +122,6 @@
     {"id":{"name":"PnjDialogueOld","path":"scripts/PnjDialogueOld/PnjDialogueOld.yy",},},
     {"id":{"name":"ScreenShake","path":"scripts/ScreenShake/ScreenShake.yy",},},
     {"id":{"name":"SlideTransition","path":"scripts/SlideTransition/SlideTransition.yy",},},
-    {"id":{"name":"handle_room_exit_events","path":"scripts/handle_room_exit_events/handle_room_exit_events.yy",},},
     {"id":{"name":"story_events_niv1","path":"scripts/story_events_niv1/story_events_niv1.yy",},},
     {"id":{"name":"shWhite","path":"shaders/shWhite/shWhite.yy",},},
     {"id":{"name":"sBackground1","path":"sprites/sBackground1/sBackground1.yy",},},

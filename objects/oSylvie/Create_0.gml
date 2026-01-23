@@ -15,7 +15,7 @@ dialogue_system.add_dialogue_state("default", [
 // État 0: Première rencontre
 dialogue_system.add_dialogue_state(1, [
     ["...", sSylvie]
-], 
+],
 function(pnj) {
     return pnj.narrative_progress == 0;
 },

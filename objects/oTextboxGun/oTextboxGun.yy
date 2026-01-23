@@ -28,7 +28,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"texte","filters":[],"listItems":[],"multiselect":false,"name":"texte","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":" SwagLand: Le Frigo Perdu est surement le meilleur jeu de plateforme sur terre, ou au moins dans le top 5.","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"texte","filters":[],"listItems":[],"multiselect":false,"name":"texte","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":" SwagLand: Le Frigo Perdu est surement le meilleur jeu de plateforme sur terre, ou au moins dans le top 5.","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

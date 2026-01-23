@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"PNJdialogue",
   "name":"PNJdialogue",
   "parent":{

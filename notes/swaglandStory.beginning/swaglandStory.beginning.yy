@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"swaglandStory.beginning",
   "name":"swaglandStory.beginning",
   "parent":{

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sOuiDeath",
   "bboxMode":2,
   "bbox_bottom":29,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d7c36b5c-bca1-43cc-8e84-f4ff29ab8698","name":"d7c36b5c-bca1-43cc-8e84-f4ff29ab8698","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d7c36b5c-bca1-43cc-8e84-f4ff29ab8698","name":"d7c36b5c-bca1-43cc-8e84-f4ff29ab8698","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

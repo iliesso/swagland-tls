@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sBMaisonspawn",
   "bboxMode":0,
   "bbox_bottom":199,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"24c4cd2c-2ad8-4d36-a6b1-9a66d4cfcd19","name":"24c4cd2c-2ad8-4d36-a6b1-9a66d4cfcd19","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"24c4cd2c-2ad8-4d36-a6b1-9a66d4cfcd19","name":"24c4cd2c-2ad8-4d36-a6b1-9a66d4cfcd19","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

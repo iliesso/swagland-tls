@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"Interactive tooltip",
   "name":"Interactive tooltip",
   "parent":{

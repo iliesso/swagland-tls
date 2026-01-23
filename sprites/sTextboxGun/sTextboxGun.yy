@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sTextboxGun",
   "bboxMode":0,
   "bbox_bottom":156,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"be7924bb-a3ed-4e84-928e-6d47053d5f35","name":"be7924bb-a3ed-4e84-928e-6d47053d5f35","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"be7924bb-a3ed-4e84-928e-6d47053d5f35","name":"be7924bb-a3ed-4e84-928e-6d47053d5f35","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

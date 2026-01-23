@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sEnemyFall",
   "bboxMode":0,
   "bbox_bottom":26,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"964db9e1-56df-44fe-a528-15d87505f11b","name":"964db9e1-56df-44fe-a528-15d87505f11b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"04958420-b911-4afc-ae24-6f43ec89d457","name":"04958420-b911-4afc-ae24-6f43ec89d457","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"964db9e1-56df-44fe-a528-15d87505f11b","name":"964db9e1-56df-44fe-a528-15d87505f11b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"04958420-b911-4afc-ae24-6f43ec89d457","name":"04958420-b911-4afc-ae24-6f43ec89d457","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

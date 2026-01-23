@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"doc_DialogueSystem",
   "name":"doc_DialogueSystem",
   "parent":{

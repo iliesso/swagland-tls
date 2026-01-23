@@ -17,12 +17,19 @@ function story_niv1_check_sylvie_objects() {
     
     // Si les deux sont cassés
     if (lamp_broken && vase_broken) {
+        show_debug_message("Story Niv1: Objets de Sylvie cassés.");
         global.story_niv1_vase = true;
         
         // Faire progresser la narration de Sylvie
         var sylvie_data = get_pnj_data("sylvie");
         if (sylvie_data.narrative_progress < 2) {
             sylvie_data.narrative_progress = 2;
+            
+            // Mettre à jour l'instance de Sylvie si elle existe
+            if (instance_exists(oSylvie)) {
+                oSylvie.narrative_progress = 2;
+                show_debug_message("Story Niv1: narrative_progress de Sylvie mis à 2");
+            }
         }
     }
 }
@@ -32,10 +39,16 @@ function story_niv1_check_sylvie_objects() {
 function story_niv1_on_exit_maisonspawn() {
     // Si le joueur sort après avoir cassé les objets
     if (global.story_niv1_vase) {
+        show_debug_message("Story Niv1: Sylvie découvre les dégâts.");
         // Sylvie découvre les dégâts
         var sylvie_data = get_pnj_data("sylvie");
         if (sylvie_data.narrative_progress == 2) {
             sylvie_data.narrative_progress = 3;
+            
+            // Mettre à jour l'instance de Sylvie si elle existe
+            if (instance_exists(oSylvie)) {
+                oSylvie.narrative_progress = 3;
+            }
         }
         
         // Reset le flag
