@@ -31,9 +31,13 @@ global.camWidth = RESOL_W;
 
 #region //PNJ Manager
 
-pnj_states = ds_map_create();
+// Utilise un struct au lieu de ds_map (moderne GML)
+pnj_states = {};
 
 #endregion
+
+// Enregistrer les événements d'histoire
+register_story_events();
 
 
 //********
@@ -53,20 +57,20 @@ global.keyAction = ord("E");
 //*******************
 //**STORY VARIABLES**
 //*******************
-
+// NOTE: Maintenant géré par global.story (StoryManager)
+// Utiliser: story_flag("niv1.vase_broken", value)
+// ou: story_check("niv1.vase_broken")
 
 #region //Acte 1: Début
 
-	
 	#region //Arc Début
 
-
 		#region //Niv1
-		global.story_niv1_vase = false;   //Objets de sylvie tous cassés ou pas dans sa maison.
+		// DEPRECATED: Les flags sont maintenant dans global.story.flags
+		// global.story_niv1_vase remplacé par story_flag("niv1.vase_broken")
 		#endregion
 	
 	#endregion
-
 
 #endregion
 

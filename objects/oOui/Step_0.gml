@@ -44,7 +44,7 @@ if (hascontrol = true)
 					
 					vsp = -jumpspd;   //Jump
 					jumped = true;
-					
+				
 				}
 			}
 		}
