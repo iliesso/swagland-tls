@@ -1,5 +1,5 @@
 /// @description Système de dialogue centralisé pour PNJ
-/// @version 2.0 - Utilise des structs au lieu de ds_map, callbacks avec contexte PNJ
+/// @version 3.0 - Priorité inversée, options struct, speaker par ligne
 
 function DialogueSystem() constructor {
     // Struct pour stocker les états de dialogue (plus besoin de cleanup!)
@@ -27,21 +27,18 @@ function DialogueSystem() constructor {
         owner = pnj_instance;
     };
     
-    /// @function add_dialogue_state(state_name, dialogues_array, condition_func, on_enter_func, on_exit_func)
-    /// @param {string|real} state_name - Id de l'état (nombre = priorité, "default" = fallback)
-    /// @param {array} dialogues_array - Tableau de lignes [[texte, sprite?, son?], ...]
-    /// @param {function} condition_func - (optionnel) function(pnj) qui retourne true/false
-    /// @param {function} on_enter_func - (optionnel) function(pnj) exécutée au début
-    /// @param {function} on_exit_func - (optionnel) function(pnj) exécutée à la fin
-    add_dialogue_state = function(state_name, dialogues_array, condition_func = undefined, on_enter_func = undefined, on_exit_func = undefined) {
+    /// @function add_dialogue_state(state_name, dialogues_array, opts)
+    /// @param {string|real} state_name - Id de l'état (nombre élevé = plus prioritaire, "default" = fallback)
+    /// @param {array} dialogues_array - Tableau de lignes [[texte, sprite?, son?, speaker?], ...]
+    /// @param {struct} opts - (optionnel) { condition, on_enter, on_exit }
+    add_dialogue_state = function(state_name, dialogues_array, opts = {}) {
         var state = {
             lines: dialogues_array,
-            condition: condition_func,
-            on_enter: on_enter_func,
-            on_exit: on_exit_func
+            condition: variable_struct_get(opts, "condition"),
+            on_enter: variable_struct_get(opts, "on_enter"),
+            on_exit: variable_struct_get(opts, "on_exit")
         };
         
-        // Utilisation de variable_struct_set pour les clés numériques
         variable_struct_set(dialogues, string(state_name), state);
     };
     
@@ -52,7 +49,7 @@ function DialogueSystem() constructor {
     };
     
     /// @function get_available_state()
-    /// @description Retourne l'état disponible le plus prioritaire
+    /// @description Retourne l'état disponible le plus prioritaire (numéro élevé = prioritaire)
     get_available_state = function() {
         var keys = variable_struct_get_names(dialogues);
         var numeric_states = [];
@@ -60,37 +57,21 @@ function DialogueSystem() constructor {
         // Collecter les états numériques
         for (var i = 0; i < array_length(keys); i++) {
             var key = keys[i];
+            if (key == "default") continue;
             
-            // Ignorer les clés non-numériques comme "default"
-            if (key != "default") {
-                // Vérifier si la clé contient uniquement des chiffres
-                var _is_numeric_key = true;
-                for (var j = 1; j <= string_length(key); j++) {
-                    var char = string_char_at(key, j);
-                    if (char < "0" || char > "9") {
-                        _is_numeric_key = false;
-                        break;
-                    }
-                }
-                
-                // Si c'est numérique, l'ajouter
-                if (_is_numeric_key && string_length(key) > 0) {
-                    var num_key = real(key);
-                    if (num_key > 0) {
-                        array_push(numeric_states, num_key);
-                    }
-                }
+            // Vérifier si la clé est numérique via string_digits
+            if (string_digits(key) == key && string_length(key) > 0) {
+                array_push(numeric_states, real(key));
             }
         }
         
-        // Trier par ordre croissant (1 = premier dialogue, 2 = suivant, etc.)
-        array_sort(numeric_states, function(a, b) { return a - b; });
+        // Trier par ordre décroissant (numéro élevé = plus prioritaire)
+        array_sort(numeric_states, function(a, b) { return b - a; });
         
-        // Vérifier chaque état numérique avec son contexte
+        // Retourner le premier état dont la condition est remplie
         for (var i = 0; i < array_length(numeric_states); i++) {
             var state = get_state(numeric_states[i]);
             if (state != undefined) {
-                // Appel de la condition avec le PNJ en contexte
                 if (state.condition == undefined || state.condition(owner)) {
                     return numeric_states[i];
                 }
@@ -148,15 +129,20 @@ function DialogueSystem() constructor {
         
         var line = current_dialogue[dialogue_index];
         
-        // Préparer les données
-        var _speaker = pnj.nom;
+        // Format ligne: [texte, sprite?, son?, speaker?] ou simple string
         var _msg = is_array(line) ? line[0] : line;
         var _length = string_length(_msg);
         
-        // Extraire le sprite du portrait si spécifié dans la ligne
+        // Extraire le sprite du portrait si spécifié
         var _portrait_spr = noone;
         if (is_array(line) && array_length(line) > 1 && sprite_exists(line[1])) {
             _portrait_spr = line[1];
+        }
+        
+        // Extraire le speaker par ligne (4ème élément) ou fallback sur pnj.nom
+        var _speaker = (pnj != noone && variable_instance_exists(pnj, "nom")) ? pnj.nom : "???";
+        if (is_array(line) && array_length(line) > 3 && is_string(line[3])) {
+            _speaker = line[3];
         }
         
         // Vérifier si on a déjà une textbox active
@@ -165,15 +151,18 @@ function DialogueSystem() constructor {
             active_textbox.msg = _msg;
             active_textbox.length = _length;
             active_textbox.textProgress = 0;
+            active_textbox.speaker = _speaker;
             
             // Mettre à jour le portrait seulement si spécifié
             if (_portrait_spr != noone) {
                 active_textbox.portrait_sprite = _portrait_spr;
-                pnj.sprite_index = _portrait_spr;
             }
         } else {
             // Créer une nouvelle boîte de dialogue
-            var text_instance = instance_create_layer(pnj.x, pnj.y - 16, "Instances", oTextDialogue);
+            var _layer = layer_exists("Instances") ? "Instances" : layer;
+            var _x = (pnj != noone && instance_exists(pnj)) ? pnj.x : x;
+            var _y = (pnj != noone && instance_exists(pnj)) ? pnj.y - 16 : y;
+            var text_instance = instance_create_layer(_x, _y, _layer, oTextDialogue);
             text_instance.speaker = _speaker;
             text_instance.msg = _msg;
             text_instance.length = _length;
@@ -183,11 +172,6 @@ function DialogueSystem() constructor {
             
             // Stocker la référence
             active_textbox = text_instance;
-            
-            // Appliquer le sprite au PNJ si spécifié
-            if (_portrait_spr != noone) {
-                pnj.sprite_index = _portrait_spr;
-            }
         }
         
         // Jouer le son si spécifié

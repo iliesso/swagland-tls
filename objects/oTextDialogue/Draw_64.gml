@@ -1,4 +1,4 @@
-/// @description Draw portrait, black box and text
+/// @description Draw portrait, speaker name, black box and text
 
 // === DESSINER LE PORTRAIT DU PNJ ===
 if (portrait_sprite != noone && sprite_exists(portrait_sprite)) {
@@ -17,8 +17,14 @@ if (portrait_sprite != noone && sprite_exists(portrait_sprite)) {
 
 // === DESSINER LA BOÎTE DE TEXTE ===
 draw_sprite_stretched(sBlack, background, x1, y1, x2 - x1, y2 - y1);
-DrawSetText(c_white, fDialogue, fa_center, fa_top);
 
-// Support string simple ou array de messages
+// === DESSINER LE NOM DU SPEAKER ===
+if (speaker != "") {
+    DrawSetText(c_yellow, fDialogue, fa_left, fa_top);
+    draw_text(x1 + 20, y1 + 8, speaker);
+}
+
+// === DESSINER LE TEXTE ===
+DrawSetText(c_white, fDialogue, fa_center, fa_top);
 var _current_msg = is_array(msg) ? msg[page] : msg;
 draw_text((x1+x2)/2, y1+30, string_copy(_current_msg, 1, textProgress));
