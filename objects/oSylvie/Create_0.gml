@@ -42,7 +42,7 @@ function(pnj) {
 
 // État 3: Objets cassés
 dialogue_system.add_dialogue_state(3, [
-    ["Et c'est moi qui vais nettoyer tes bêtises...", sSylvie]
+    ["Et c'est moi qui vais nettoyer tes betises...", sSylvie]
 ], 
 function(pnj) {
     return pnj.narrative_progress == 3;
@@ -54,7 +54,7 @@ function(pnj) {
 
 // État 4: Objets réparés
 dialogue_system.add_dialogue_state(4, [
-    ["J'ai enfin réparé tes bêtises.", sSylvie]
+    ["J'ai enfin repare tes betises.", sSylvie]
 ], 
 function(pnj) {
     return pnj.narrative_progress == 4;

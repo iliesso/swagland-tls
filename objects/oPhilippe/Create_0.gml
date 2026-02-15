@@ -14,7 +14,7 @@ dialogue_system.add_dialogue_state("default", [
 // État 1: Première rencontre
 dialogue_system.add_dialogue_state(1, [
     ["Bonjour mon grand. Moi c'est Philippe, et toi?", sPhilippe],
-    ["Alors comme ça, tu t'appelles " + string(global.playerName) + "...", sPhilippe],
+    ["Alors comme ca, tu t'appelles " + string(global.playerName) + "...", sPhilippe],
     ["Fais attention aux falaises, c'est dangereux ici.", sPhilippe]
 ], 
 function(pnj) {
