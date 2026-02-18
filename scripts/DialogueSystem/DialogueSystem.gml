@@ -129,6 +129,38 @@ function DialogueSystem() constructor {
         
         var line = current_dialogue[dialogue_index];
         
+        // === DÉTECTION DE CHOIX ===
+        // Format choix: { choice: [[label, on_select?, next_lines?], ...] }
+        if (is_struct(line) && variable_struct_exists(line, "choice")) {
+            var choice_options = line.choice;
+            
+            // Vérifier si on a déjà une textbox active
+            if (active_textbox != noone && instance_exists(active_textbox)) {
+                // Passer en mode choix
+                active_textbox.is_choice_mode = true;
+                active_textbox.choice_options = choice_options;
+                active_textbox.selected_choice_index = 0;
+                active_textbox.textProgress = 0;  // Reset pour animation
+            } else {
+                // Créer une nouvelle boîte en mode choix
+                var _layer = layer_exists("Instances") ? "Instances" : layer;
+                var _x = (pnj != noone && instance_exists(pnj)) ? pnj.x : x;
+                var _y = (pnj != noone && instance_exists(pnj)) ? pnj.y - 16 : y;
+                var text_instance = instance_create_layer(_x, _y, _layer, oTextDialogue);
+                text_instance.pnj_ref = pnj;
+                text_instance.dialogue_system_ref = self;
+                text_instance.is_choice_mode = true;
+                text_instance.choice_options = choice_options;
+                text_instance.selected_choice_index = 0;
+                
+                active_textbox = text_instance;
+            }
+            
+            dialogue_index++;
+            return true;
+        }
+        
+        // === LIGNE DE DIALOGUE NORMALE ===
         // Format ligne: [texte, sprite?, son?, speaker?] ou simple string
         var _msg = is_array(line) ? line[0] : line;
         var _length = string_length(_msg);
@@ -152,6 +184,7 @@ function DialogueSystem() constructor {
             active_textbox.length = _length;
             active_textbox.textProgress = 0;
             active_textbox.speaker = _speaker;
+            active_textbox.is_choice_mode = false;  // Retour au mode normal
             
             // Mettre à jour le portrait seulement si spécifié
             if (_portrait_spr != noone) {
@@ -180,6 +213,60 @@ function DialogueSystem() constructor {
         }
         
         dialogue_index++;
+        return true;
+    };
+    
+    /// @function select_choice(choice_index)
+    /// @description Traite la sélection d'un choix par le joueur
+    /// @param {real} choice_index - Index du choix sélectionné (0-based)
+    select_choice = function(choice_index) {
+        var pnj = owner;
+        
+        if (active_textbox == noone || !instance_exists(active_textbox)) {
+            return false;
+        }
+        
+        var choice_options = active_textbox.choice_options;
+        if (choice_index < 0 || choice_index >= array_length(choice_options)) {
+            return false;
+        }
+        
+        var selected_option = choice_options[choice_index];
+        
+        // Format: [label, on_select?, next_lines?]
+        var on_select = (array_length(selected_option) > 1) ? selected_option[1] : undefined;
+        var next_lines = (array_length(selected_option) > 2) ? selected_option[2] : undefined;
+        
+        // Exécuter le callback de sélection
+        if (on_select != undefined && is_method(on_select)) {
+            on_select(pnj);
+        }
+        
+        // Injecter les lignes de branchement si présentes
+        if (next_lines != undefined && is_array(next_lines)) {
+            // Insérer les next_lines après l'index actuel
+            var new_dialogue = [];
+            
+            // Copier tout avant dialogue_index
+            for (var i = 0; i < dialogue_index; i++) {
+                array_push(new_dialogue, current_dialogue[i]);
+            }
+            
+            // Insérer les next_lines
+            for (var i = 0; i < array_length(next_lines); i++) {
+                array_push(new_dialogue, next_lines[i]);
+            }
+            
+            // Copier tout après dialogue_index
+            for (var i = dialogue_index; i < array_length(current_dialogue); i++) {
+                array_push(new_dialogue, current_dialogue[i]);
+            }
+            
+            current_dialogue = new_dialogue;
+        }
+        
+        // Avancer au prochain dialogue
+        advance_dialogue(pnj);
         return true;
     };
     

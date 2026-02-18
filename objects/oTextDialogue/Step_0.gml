@@ -5,10 +5,37 @@ portrait_x += (portrait_target_x - portrait_x) / speakerEntrance;
 
 // === ANIMATION BOÎTE DE TEXTE ===
 animProgress += (1 - animProgress) / 50;
-textProgress += global.textSpeed;
 
 x1 = lerp(x1, x1Target, animProgress);
 x2 = lerp(x2, x2Target, animProgress);
+
+// === MODE CHOIX: NAVIGATION ET SÉLECTION ===
+if (is_choice_mode) {
+    var num_choices = array_length(choice_options);
+    
+    // Navigation haut/bas
+    if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("Z"))) {
+        selected_choice_index--;
+        if (selected_choice_index < 0) selected_choice_index = num_choices - 1;
+    }
+    
+    if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))) {
+        selected_choice_index++;
+        if (selected_choice_index >= num_choices) selected_choice_index = 0;
+    }
+    
+    // Validation du choix
+    if (keyboard_check_pressed(global.keyAction) || keyboard_check_pressed(vk_enter) || mouse_check_button_pressed(mb_right)) {
+        if (dialogue_system_ref != noone) {
+            dialogue_system_ref.select_choice(selected_choice_index);
+        }
+    }
+    
+    return; // Skip le reste en mode choix
+}
+
+// === MODE DIALOGUE NORMAL ===
+textProgress += global.textSpeed;
 
 // === INPUT: AVANCER OU PASSER LE DIALOGUE ===
 if (keyboard_check_pressed(global.keyAction) || mouse_check_button_pressed(mb_right)) {
